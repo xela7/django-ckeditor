@@ -4,7 +4,9 @@ jQuery(function(){
     	$('textarea[data-type=ckeditortype]').each(function(){
         	if($(this).data('processed') == "0" && $(this).attr('id').indexOf('__prefix__') == -1){
 	            $(this).data('processed',"1");
-	            CKEDITOR.replace($(this).attr('id'), $(this).data('config'));
+                if (! ($(this).attr('id') in CKEDITOR.instances)) {
+                    CKEDITOR.replace($(this).attr('id'), $(this).data('config'));
+                }
 	        }
 	    });
     }
