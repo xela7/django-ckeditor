@@ -38,8 +38,11 @@ class CKEditorWidget(forms.Textarea):
     """
     class Media:
         try:
+            jquery_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'
+            if hasattr(settings, 'JQUERY_URL'):
+                jquery_url = settings.JQUERY_URL
             js = (
-                'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',
+                JQUERY_URL,
                 settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor.js',
                 settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/jquery-ckeditor.js',
              )
