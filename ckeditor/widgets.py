@@ -42,7 +42,7 @@ class CKEditorWidget(forms.Textarea):
             if hasattr(settings, 'JQUERY_URL'):
                 jquery_url = settings.JQUERY_URL
             js = (
-                JQUERY_URL,
+                jquery_url,
                 settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor.js',
                 settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/jquery-ckeditor.js',
              )
