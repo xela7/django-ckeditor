@@ -39,8 +39,10 @@ class CKEditorWidget(forms.Textarea):
     class Media:
         try:
             js = (
-                settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js',
-            )
+                'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js',
+                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/ckeditor.js',
+                settings.CKEDITOR_MEDIA_PREFIX + 'ckeditor/jquery-ckeditor.js',
+             )
         except AttributeError:
             raise ImproperlyConfigured("django-ckeditor requires \
                     CKEDITOR_MEDIA_PREFIX setting. This setting specifies a \
